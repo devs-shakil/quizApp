@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quizeApp</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <!-- start quiz button -->
+    <div class="startBtn">
+        <button>Start Quiz</button>
+    </div>
+    <!-- info box -->
+    <div class="infoBox ">
+        <div class="infoTitle">
+            <span>some Rules of this quiz</span>
+        </div>
+        <div class="infoList">
+            <div class="info">1. You will have only <span>15 seconds</span> per each question.</div>
+            <div class="info">2. Once you select your answer, it can't be undone.</div>
+            <div class="info">3. You can't select any option once time goes off.</div>
+            <div class="info">4. You can't exit from the Quiz while you're playing.</div>
+            <div class="info">5. You'll get points on the basis of your correct answers.</div>
+        </div>
+        <div class="buttons">
+            <button class="exit">Exit Quiz</button>
+            <button class="continue">Continue</button>
+        </div>
+    </div>
+
+    <!-- quiz box -->
+    <div class="quizBox ">
+        <header>
+            <div class="title">Quiz Application</div>
+            <div class="scoreWrapper">
+                <div class="scoreTxt">Score</div>
+                <div class="score">00</div>
+            </div>
+        </header>
+        <section>
+            <div class="queText">
+                <!-- here I have inserted question form javascript -->
+            </div>
+            <div class="optionList">
+                <!-- Here I have inserted option from javascript -->
+            </div>
+        </section>
+        <footer>
+            <div class="totalQue">
+                <!-- Here I have inserted question count number form javascript -->
+            </div>
+            <button class="nextBtn">Next Question</button>
+        </footer>
+    </div>
+    <div class="resultBox ">
+        
+        <!-- <div class="complete_text">You've completed the Quiz!</div> -->
+        <div class="scoreText">
+            <!-- Here I've inserted Score Result from JavaScript -->
+        </div>
+        <div class="buttons">
+            <!-- <button class="restart">Replay Quiz</button>
+            <button class="quit">Quit Quiz</button> -->
+        </div>
+    </div>
+
+
+    <script src="/app.js"></script>
+</body>
+</html>
