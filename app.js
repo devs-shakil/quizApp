@@ -79,13 +79,19 @@ const exitBtn = document.querySelector('.buttons .exit');
 const optionList = document.querySelector('.optionList');
 const insertQuesFooter = document.querySelector('.totalQue');
 let score = document.querySelector('.score');
+const resultBox = document.querySelector('.resultBox');
+const restartBtn = document.querySelector('.restart');
+
 
 let queCount = 0;
 let userScore = 0;
 let quesNumber = 1;
 
 startBtn.onclick = () =>{
-    infoBox.classList.add("activeInfo")
+    infoBox.classList.add("activeInfo");
+}
+exitBtn.onclick = () =>{
+    infoBox.classList.remove('activeInfo');
 }
 continueBtn.onclick = () =>{
     infoBox.classList.remove('activeInfo');
@@ -94,10 +100,7 @@ continueBtn.onclick = () =>{
     queCounter(1)
     
 }
-exitBtn.onclick = () =>{
-    window.location.reload();
-    console.log('hello')
-}
+
 
 //show Question function start
 const showQuestion = (index) =>{
@@ -125,7 +128,7 @@ nextBtn.onclick = () =>{
         queCounter(quesNumber)
 
     }else{
-        
+        showResult()
     }
 }
 //next question fucntion end
@@ -158,7 +161,37 @@ function optionSelected(answer){
 }
 //answer the question function end
 
+//queCounter function start
 const queCounter = (index) =>{
     let totalQueCounTag =`<span><p>${index}</p> of <p>${questions.length}</p> Questions</span>`;
     insertQuesFooter.innerHTML = totalQueCounTag;
+}
+//queCounter function end
+
+//show result start
+const showResult  = () =>{
+    infoBox.classList.remove('activeInfo');
+    quizBox.classList.remove('activeQuiz');
+    resultBox.classList.add('activeResult');
+    const scoreText = resultBox.querySelector('.scoreText');
+    let scoreTag = `<span>Congratulation, You got <p>${userScore}</p> out of <p>${questions.length}</p></span>`
+    scoreText.innerHTML = scoreTag;
+
+}
+//show result end
+
+restartBtn.onclick = () =>{
+    quizBox.classList.add('activeQuiz');
+    resultBox.classList.remove('activeResult');
+    queCount = 0;
+    quesNumber = 1;
+    showQuestion(queCount);
+    queCounter(quesNumber);
+    nextBtn.classList.remove('show');
+    userScore = 0;
+    score.innerHTML = userScore;
+}
+const quitBtn = document.querySelector('.buttons .quit');
+quitBtn.onclick = () =>{
+    window.location.reload();
 }
