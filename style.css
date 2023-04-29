@@ -299,3 +299,11 @@ footer button.show{
 	background:#007bff;
 	transition: all 0.3s ease;
 }
+.quizBox header .progressBar{
+	position: absolute;
+	bottom:0px;
+	left:0px;
+	height:3px;
+	background:#007bff;
+	
+}

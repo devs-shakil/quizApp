@@ -1,10 +1,10 @@
 let questions = [
     {
     numb: 1,
-    question: "বাংলাদেশের রাজধানী কোথায়??",
+    question: "What does HTML stand for?",
     answer: "Hyper Text Markup Language",
     options: [
-      "ঢাকা",
+      "Hyper Text Makeup Language",
       "Hyper Text Markup Language",
       "Hyper Text Multiple Language",
       "Hyper Tool Multi Language"
@@ -42,32 +42,7 @@ let questions = [
       "Statement Question Language",
       "Structured Query Language"
     ]
-  },
-    {
-    numb: 5,
-    question: "What does XML stand for?",
-    answer: "eXtensible Markup Language",
-    options: [
-      "eXtensible Markup Language",
-      "eXecutable Multiple Language",
-      "eXTra Multi-Program Language",
-      "eXamine Multiple Language"
-    ]
-  },
-  // you can uncomment the below codes and make duplicate as more as you want to add question
-  // but remember you need to give the numb value serialize like 1,2,3,5,6,7,8,9.....
-
-  //   {
-  //   numb: 6,
-  //   question: "Your Question is Here",
-  //   answer: "Correct answer of the question is here",
-  //   options: [
-  //     "Option 1",
-  //     "option 2",
-  //     "option 3",
-  //     "option 4"
-  //   ]
-  // },
+  }
 ];
 
 //
@@ -81,11 +56,13 @@ const insertQuesFooter = document.querySelector('.totalQue');
 let score = document.querySelector('.score');
 const resultBox = document.querySelector('.resultBox');
 const restartBtn = document.querySelector('.restart');
+const progressBar = document.querySelector('.progressBar')
 
 
 let queCount = 0;
 let userScore = 0;
 let quesNumber = 1;
+let qsnProgress;
 
 startBtn.onclick = () =>{
     infoBox.classList.add("activeInfo");
@@ -98,6 +75,7 @@ continueBtn.onclick = () =>{
     quizBox.classList.add('activeQuiz')
     showQuestion(0)
     queCounter(1)
+   
     
 }
 
@@ -125,7 +103,8 @@ nextBtn.onclick = () =>{
         quesNumber ++;
         showQuestion(queCount)
         nextBtn.classList.remove('show');
-        queCounter(quesNumber)
+        queCounter(quesNumber);
+        
 
     }else{
         showResult()
@@ -195,3 +174,4 @@ const quitBtn = document.querySelector('.buttons .quit');
 quitBtn.onclick = () =>{
     window.location.reload();
 }
+
